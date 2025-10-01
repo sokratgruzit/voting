@@ -1,0 +1,127 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+	padding: 20px;
+}
+
+.card {
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	padding: 16px;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	width: 260px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	transition: all 0.3s ease;
+}
+
+.cardVoted {
+	border-color: green;
+	background: #e6ffe6;
+}
+
+.ideaTitle {
+	margin: 0 0 8px 0;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.description {
+	margin-bottom: 8px;
+	color: #555;
+}
+
+.votes {
+	font-weight: bold;
+	margin-bottom: 12px;
+	color: #333;
+}
+
+.button {
+	padding: 8px 14px;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+	background: #007bff;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	transition: opacity 0.3s, background 0.3s;
+	font-weight: 500;
+}
+
+.button:hover {
+	background: #0056b3;
+}
+
+.buttonDisabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 0;
+}
+
+.spinner,
+.spinnerSmall {
+	border: 3px solid rgba(0,0,0,0.1);
+	border-top: 3px solid #007bff;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+.spinner {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 12px;
+}
+
+.spinnerSmall {
+	width: 16px;
+	height: 16px;
+}
+
+.errorPopup {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background: #ff4d4f;
+	color: #fff;
+	padding: 12px 20px;
+	border-radius: 6px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	z-index: 999;
+	animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+	0% { opacity: 0; transform: translateY(-10px); }
+	10% { opacity: 1; transform: translateY(0); }
+	90% { opacity: 1; transform: translateY(0); }
+	100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+	.button {
+		padding: 6px 10px;
+		font-size: 0.9rem;
+	}
+
+	.card {
+		width: 100%;
+	}
+}
